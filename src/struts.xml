@@ -12,14 +12,21 @@
 		<action name="korea" class="test.struts.Hello" method="test">
 			<result name="ok">/1010/main.jsp</result>
 		</action>
-	</package>-->
+	</package>
 	<package name="hello2" namespace="/hello2" extends="struts-default">
 		<action name="hello" class="hello2.action.HelloWorld">
-			<!-- params인터셉터는 액션의 setter값을 요청 파라미터로 셋팅한다(생략가능) -->
 			<interceptor-ref name="params" />
 			<result name="success">/hello2/result.jsp</result>
 			<result name="input">/hello2/hello.jsp</result>
 		</action>
 	</package>
 	<constant name="struts.i18n.encoding" value="UTF-8" />
+	-->
+	    <package name="struts2" extends="struts-default">
+      <action name="user" class="login.action.UserAction">
+        <result>/1010/save_ok.jsp</result>
+        <result name="error">/1010/error.jsp</result>
+      </action>
+    </package>
+	
 </struts>
