@@ -28,6 +28,7 @@ public class UserAction implements Action {
 		UserDAO loginDao = new UserDAO();
 
 		if (loginDao.save(userInfo)) {
+			log.info(">>>>>> data : "+userInfo.toString());		
 			return SUCCESS;
 		} else {
 			return ERROR;

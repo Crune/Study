@@ -23,6 +23,7 @@ public class UserAction2 implements Action {
 		//사용자정보 입력위해 DAO 호출
 		UserDAO loginDao = new UserDAO();
 		if (loginDao.save(userInfo)) {
+			log.info(">>>>>> data : "+userInfo.toString());			
 			return SUCCESS;
 		} else {
 			return ERROR;

@@ -1,6 +1,10 @@
 package login.model;
 
 public class UserInfo {
+	@Override
+	public String toString() {
+		return "UserInfo [name=" + name + ", addr=" + addr + ", tel=" + tel + "]";
+	}
 	private String name;
 	private String addr;
 	private String tel;	
