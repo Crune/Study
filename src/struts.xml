@@ -4,8 +4,10 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-<!-- 
-	<package name="hello" extends="struts-default">
+
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	
+	<package name="hello" namespace="/hello" extends="struts-default">
 		<action name="hello" class="test.struts.Hello">
 			<result name="success">/1010/result.jsp</result>
 		</action>
@@ -13,6 +15,7 @@
 			<result name="ok">/1010/main.jsp</result>
 		</action>
 	</package>
+	
 	<package name="hello2" namespace="/hello2" extends="struts-default">
 		<action name="hello" class="hello2.action.HelloWorld">
 			<interceptor-ref name="params" />
@@ -20,13 +23,12 @@
 			<result name="input">/hello2/hello.jsp</result>
 		</action>
 	</package>
-	<constant name="struts.i18n.encoding" value="UTF-8" />
-	-->
-	    <package name="struts2" extends="struts-default">
-      <action name="user" class="login.action.UserAction">
-        <result>/1010/save_ok.jsp</result>
-        <result name="error">/1010/error.jsp</result>
-      </action>
-    </package>
 	
+	<package name="struts2" extends="struts-default">
+		<action name="user" class="login.action.UserAction">
+			<result>/1010/save_ok.jsp</result>
+			<result name="error">/1010/error.jsp</result>
+		</action>
+	</package>
+
 </struts>
