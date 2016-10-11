@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-formPro
+formPro<br/>
+<font size="6">
+id = ${id }<br/>
+pw = ${pw }<br/>
+</font>
 </body>
 </html>
