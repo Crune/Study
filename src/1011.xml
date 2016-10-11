@@ -10,7 +10,10 @@
 		<action name="form" class="test.struts.FormAction">
 			<result>/1011/form.jsp</result>
 		</action>
+		
 		<action name="formPro" class="test.struts.FormProAction">
+			<interceptor-ref name="params" /> <!-- parameter setter -->
+			<interceptor-ref name="workflow" /> <!-- validate run -->
 			<result>/1011/formPro.jsp</result>
 		</action>
 		
