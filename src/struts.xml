@@ -8,5 +8,6 @@
 	<constant name="struts.i18n.encoding" value="UTF-8" />
 	
 	<include file="1010.xml" />
+	<include file="1011.xml" />
 	
 </struts>
