@@ -4,14 +4,19 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+
+	<package name="hello3" namespace="/1012" extends="struts-default">
 	
-	<package name="form" namespace="/1011" extends="struts-default">
+		<interceptors>
+			<interceptor name="my" class="test.interceptor.MyInterceptor" />
+		</interceptors>
 	
 		<action name="form" class="test.struts.FormAction">
 			<result>/1011/form.jsp</result>
 		</action>
 		
 		<action name="formPro" class="test.struts.FormProAction">
+			<interceptor-ref name="my" />
 			<interceptor-ref name="prepare"  /><!-- Preparable.prepare() -->
 			<interceptor-ref name="modelDriven"  /><!-- ModelDriven.getModel() -->
 			<interceptor-ref name="params"  /><!-- parameter setter -->
@@ -20,5 +25,5 @@
 		</action>
 		
 	</package>
-	
+
 </struts>

@@ -5,7 +5,7 @@
 
 <struts>
 	
-	<package name="hello" namespace="/hello" extends="struts-default">
+	<package name="hello" namespace="/1010-1" extends="struts-default">
 		<action name="hello" class="test.struts.Hello">
 			<result name="success">/1010/basic/result.jsp</result>
 		</action>
@@ -14,7 +14,7 @@
 		</action>
 	</package>
 	
-	<package name="hello2" namespace="/hello2" extends="struts-default">
+	<package name="hello2" namespace="/1010-2" extends="struts-default">
 		<action name="hello" class="hello2.action.HelloWorld">
 			<interceptor-ref name="params" />
 			<result name="success">/1010/hello2/result.jsp</result>
@@ -22,8 +22,11 @@
 		</action>
 	</package>
 	
-	<package name="struts2" extends="struts-default">
+	<package name="struts2" namespace="/1010" extends="struts-default">
 		<action name="user" class="login.action.UserAction">
+			<interceptor-ref name="prepare"  /><!-- Preparable.prepare() -->
+			<interceptor-ref name="modelDriven"  /><!-- ModelDriven.getModel() -->
+			<interceptor-ref name="params"  /><!-- parameter setter -->		
 			<result>/1010/save_ok.jsp</result>
 			<result name="error">/1010/error.jsp</result>
 		</action>

@@ -11,7 +11,6 @@ formPro<br/>
 <font size="6">
 id = ${id }<br/>
 pw = ${pw }<br/>
-num = ${num }<br/>
 </font>
 </body>
 </html>

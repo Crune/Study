@@ -9,5 +9,6 @@
 	
 	<include file="1010.xml" />
 	<include file="1011.xml" />
+	<include file="1012.xml" />
 	
 </struts>
