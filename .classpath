@@ -9,5 +9,17 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0"/>
+	<classpathentry kind="lib" path="F:/slf4j-1.7.21/jcl-over-slf4j-1.7.21.jar"/>
+	<classpathentry kind="lib" path="F:/slf4j-1.7.21/jul-to-slf4j-1.7.21.jar"/>
+	<classpathentry kind="lib" path="F:/slf4j-1.7.21/log4j-over-slf4j-1.7.21.jar"/>
+	<classpathentry kind="lib" path="F:/slf4j-1.7.21/osgi-over-slf4j-1.7.21.jar"/>
+	<classpathentry kind="lib" path="F:/slf4j-1.7.21/slf4j-api-1.7.21.jar"/>
+	<classpathentry kind="lib" path="F:/slf4j-1.7.21/slf4j-ext-1.7.21.jar"/>
+	<classpathentry kind="lib" path="F:/slf4j-1.7.21/slf4j-jcl-1.7.21.jar"/>
+	<classpathentry kind="lib" path="F:/slf4j-1.7.21/slf4j-jdk14-1.7.21.jar"/>
+	<classpathentry kind="lib" path="F:/slf4j-1.7.21/slf4j-log4j12-1.7.21.jar"/>
+	<classpathentry kind="lib" path="F:/slf4j-1.7.21/slf4j-migrator-1.7.21.jar"/>
+	<classpathentry kind="lib" path="F:/slf4j-1.7.21/slf4j-nop-1.7.21.jar"/>
+	<classpathentry kind="lib" path="F:/slf4j-1.7.21/slf4j-simple-1.7.21.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -1,31 +1,34 @@
 package test.struts;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.util.Date;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.opensymphony.xwork2.Preparable;
 
-import login.action.UserAction;
+import test.interceptor.Myface;
 
-public class FormProAction extends ActionSupport implements Preparable, ModelDriven<DTO> {
+public class FormProAction extends ActionSupport implements Preparable, ModelDriven<DTO>, Myface {
 
 	private static final long serialVersionUID = 876998284539669537L;
 
-	Log log = LogFactory.getLog(UserAction.class);
+	//Log log = LogFactory.getLog(FormProAction.class);
+
+	private DTO dto;
+	
+	private Date d;
 	
 	public int getNum() {
 		return 1000;
 	}
-	private DTO dto;
 	
 	@Override
 	public String execute() {		
 		log.info("execute()");
 		
-		log.info("id"+dto.getId());
-		log.info("pw"+dto.getPw());
+		log.info("id:\t"+dto.getId());
+		log.info("pw:\t"+dto.getPw());
+		log.info("time:\t"+d);
 		return SUCCESS;
 	}
 	
@@ -45,6 +48,17 @@ public class FormProAction extends ActionSupport implements Preparable, ModelDri
 		log.info("getModel()");
 		return dto;
 	}
+
+	@Override
+	public void setDate(Date d) {
+		this.d = d;
+	}
+
+	/*
+	@Override
+	public void test() {
+		log.info("FormProAction.test()");
+	}*/
 
 	
 	

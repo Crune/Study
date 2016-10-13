@@ -12,6 +12,7 @@
 		</interceptors>
 	
 		<action name="form" class="test.struts.FormAction">
+			<interceptor-ref name="my" />
 			<result>/1011/form.jsp</result>
 		</action>
 		
