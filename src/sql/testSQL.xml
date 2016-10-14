@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC
+	'-//ibatis.apache.org//DTD Sql Map 2.0//EN'
+	'http://ibatis.apache.org/dtd/sql-map-2.dtd'
+>
+<sqlMap>
+
+	<select id="testAll" resultClass="test.ibatis.TestDTO">
+		SELECT * FROM TEST
+	</select>
+
+<!-- 
+	<typeAlias alias="test" type="test.ibatis.TestDTO" />
+
+	<resultMap id="testRes" class="test">
+		<result property="id" column="id" />
+		<result property="pw" column="pw" />
+		<result property="age" column="age" />
+		<result property="reg" column="reg" />
+	</resultMap>
+
+	<sql id="select-all">
+		SELECT * FROM TEST
+	</sql>
+ -->
+
+</sqlMap>
+

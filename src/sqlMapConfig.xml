@@ -9,6 +9,7 @@
 	<properties resource="/dbconnect.properties" />
 
 	<!--
+		settings 설명
 		cacheModelsEnabled : 설정값(파일로 저장 보안취약) 캐싱 여부 (기본 true)
 		enhancementEnabled : 바이트코드 처리속도 향상 (기본 true)
 		lazyLoadingEnabled : 실패시 재시도 수행 여부 - 디버깅시 도움 (기본 true)
@@ -18,7 +19,7 @@
 		maxRequests : 한번에 수행 가능한 SQL문의 갯수 (기본 512개)		
 		maxTransactions < maxSessions < maxRequests
 		
-		useStatementNamespaces : 
+		useStatementNamespaces : SQL문의 namespace 사용 여부 (기본 false)
 	-->
 	<settings
 		cacheModelsEnabled="true" 
@@ -39,6 +40,6 @@
 		</dataSource>
 	</transactionManager>
 
-	<sqlMap resource="/sql/boardSQL.xml"/>
+	<sqlMap resource="/sql/testSQL.xml"/>
 
 </sqlMapConfig>
