@@ -8,11 +8,20 @@
 	<select id="testAll" resultClass="test.ibatis.TestDTO">
 		SELECT * FROM TEST
 	</select>
+	
+	
+	<select id="testId" resultClass="test.ibatis.TestDTO" parameterClass="String">
+		SELECT * FROM TEST WHERE id=#id#
+	</select>
+
+	<select id="testAge" resultClass="int">
+		SELECT AGE FROM TEST
+	</select>
 
 <!-- 
 	<typeAlias alias="test" type="test.ibatis.TestDTO" />
 
-	<resultMap id="testRes" class="test">
+	<resultMap id="testRes" class="TestDTO">
 		<result property="id" column="id" />
 		<result property="pw" column="pw" />
 		<result property="age" column="age" />

@@ -5,10 +5,9 @@
 
 <struts>
 
-	<package name="ibatis" namespace="/1014" extends="struts-default">
+	<package name="default" extends="struts-default">
 	
 		<action name="view" class="test.ibatis.SelectAction">
-			<interceptor-ref name="params" />
 			<result>/1014/view.jsp</result>
 		</action>
 		

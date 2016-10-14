@@ -5,3 +5,10 @@
 <c:forEach var="dto" items="${list }">
 	${dto.id} / ${dto.pw} / ${dto.age} / ${dto.reg}<br/>
 </c:forEach>
+<br/>
+Rst:<br/>
+	${rst.id} / ${rst.pw} / ${rst.age} / ${rst.reg}<br/>
+<br/>
+<c:forEach var="age" items="${agelist }">
+	${age}<br/>
+</c:forEach>
