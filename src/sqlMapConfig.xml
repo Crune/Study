@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE
+	sqlMapConfig
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-config-2.dtd"
+>
+<sqlMapConfig>
+
+	<properties resource="/dbconnect.properties" />
+
+	<!--
+		cacheModelsEnabled : 설정값(파일로 저장 보안취약) 캐싱 여부 (기본 true)
+		enhancementEnabled : 바이트코드 처리속도 향상 (기본 true)
+		lazyLoadingEnabled : 실패시 재시도 수행 여부 - 디버깅시 도움 (기본 true)
+		
+		maxTransactions : 한번에 수행 가능한 연결 수 (기본 32개)
+		maxSessions : 자주 쓰이는 SQL 활성화 갯수 (기본 128개)
+		maxRequests : 한번에 수행 가능한 SQL문의 갯수 (기본 512개)		
+		maxTransactions < maxSessions < maxRequests
+		
+		useStatementNamespaces : 
+	-->
+	<settings
+		cacheModelsEnabled="true" 
+		enhancementEnabled="true"
+		lazyLoadingEnabled="true" 
+		maxTransactions="5" 
+		maxSessions="10" 
+		maxRequests="32" 
+		useStatementNamespaces="true"
+	/>
+
+	<transactionManager type="JDBC" commitRequired="false">
+		<dataSource type="SIMPLE">
+			<property name="JDBC.Driver" value="${driver}" />
+			<property name="JDBC.ConnectionURL" value="${url}" />
+			<property name="JDBC.Username" value="${username}" />
+			<property name="JDBC.Password" value="${password}" />
+		</dataSource>
+	</transactionManager>
+
+	<sqlMap resource="/sql/boardSQL.xml"/>
+
+</sqlMapConfig>

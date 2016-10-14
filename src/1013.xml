@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="servlet" namespace="/1013" extends="struts-default">
+	
+		<action name="servlet" class="test.struts.ServletAction">
+			<result>/1013/servlet.jsp</result>
+		</action>
+		
+	</package>
+
+</struts>

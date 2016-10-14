@@ -5,10 +5,30 @@
 
 <struts>
 
+	<constant name="struts.locale" value="ko_KR" />
+	<constant name="struts.action.extension" value="do" />
 	<constant name="struts.i18n.encoding" value="UTF-8" />
 	
-	<include file="1010.xml" />
-	<include file="1011.xml" />
-	<include file="1012.xml" />
+    <constant name="struts.convention.default.parent.package" value="default"/>
+	
+	<constant name="struts.multipart.saveDir" value="/tmp"/> 
+	<constant name="struts.multipart.maxSize" value="2097152"/> 
+	
+	<package name="servlet" namespace="/1013" extends="struts-default">
+	
+		<action name="servlet" class="test.struts.ServletAction">
+			<interceptor-ref name="servletConfig"/>
+			<result>/1013/servlet.jsp</result>
+		</action>
+		
+		<action name="upload" class="test.struts.UploadAction">
+    		<interceptor-ref name="defaultStack">
+		       <param name="fileUpload.allowedTypes">image/jpeg,image/gif,image/png</param>
+		    </interceptor-ref>
+			<interceptor-ref name="params" />
+			<result>/1013/servlet.jsp</result>
+		</action>
+		
+	</package>
 	
 </struts>
