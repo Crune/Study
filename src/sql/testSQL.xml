@@ -17,6 +17,10 @@
 	<select id="testAge" resultClass="int">
 		SELECT AGE FROM TEST
 	</select>
+	
+	<insert id="insertTest" parameterClass="test.ibatis.TestDTO">
+		INSERT INTO TEST VALUES(#id#,#pw#,#age#,SYSDATE)
+	</insert>
 
 <!-- 
 	<typeAlias alias="test" type="test.ibatis.TestDTO" />
