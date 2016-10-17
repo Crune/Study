@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC
+	'-//ibatis.apache.org//DTD Sql Map 2.0//EN'
+	'http://ibatis.apache.org/dtd/sql-map-2.dtd'
+>
+<sqlMap>
+
+	<typeAlias alias="dto" type="ch11.logon.LogonDataBean" />
+
+	<!-- 
+	<resultMap id="memberRes" class="LogonDataBean">
+		<result property="id" column="id" />
+		<result property="passwd" column="passwd" />
+		<result property="name" column="name" />
+		<result property="jumin1" column="jumin1" />
+		<result property="jumin2" column="jumin2" />
+		<result property="email" column="email" />
+		<result property="blog" column="blog" />
+		<result property="reg_date" column="reg_date" />
+	</resultMap>
+	-->
+	<select id="userCheck" resultClass="int" parameterClass="java.util.HashMap">
+		SELECT COUNT(*) FROM MEMBER WHERE ID=#id# AND PASSWD=#passwd#
+	</select>
+	
+	<select id="confirmId" resultClass="int" parameterClass="String">
+		SELECT COUNT(*) FROM MEMBER WHERE ID=#id#
+	</select>
+	
+	<insert id="join" parameterClass="ch11.logon.LogonDataBean">
+		INSERT INTO MEMBER VALUES(#id#,#passwd#,#name#,#jumin1#,#jumin2#,#email#,#blog#,SYSDATE)
+	</insert>
+	
+	
+	<select id="getId" resultClass="ch11.logon.LogonDataBean" parameterClass="String">
+		SELECT * FROM MEMBER WHERE ID=#id#
+	</select>
+	
+	<update id="modify" parameterClass="ch11.logon.LogonDataBean">
+		UPDATE MEMBER SET
+			PASSWD=#passwd#,
+			NAME=#name#,
+			EMAIL=#email#,
+			BLOG=#blog#
+		WHERE ID=#id#
+	</update>
+	
+	<delete id="deleteMember" parameterClass="java.util.HashMap">	
+		DELETE FROM MEMBER WHERE ID=(SELECT ID FROM MEMBER WHERE ID=#id# AND PASSWD=#passwd#)
+	</delete>
+	
+</sqlMap>
+

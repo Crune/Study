@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+		
+<struts>
+
+	<package name="default" extends="struts-default">
+		
+		<interceptors>
+			<interceptor name="ibatis" class="test.ibatis.IbatisInterceptor" />			
+			<interceptor-stack name="basicStack">
+				<interceptor-ref name="ibatis" />
+				<interceptor-ref name="exception" />
+				<interceptor-ref name="servletConfig" />
+				<interceptor-ref name="prepare" />
+				<interceptor-ref name="modelDriven" />
+				<interceptor-ref name="params" />
+			</interceptor-stack>
+		</interceptors>
+
+
+
+		<action name="main" class="test.ibatis.MainAction">
+			<result>/1017/main.jsp</result>
+		</action>
+
+		<action name="loginPro" class="test.ibatis.LoginProAction">
+			<interceptor-ref name="ibatis" />
+			<interceptor-ref name="servletConfig" />
+			<result name="success" type="redirect-action">main</result>
+			<result name="wrong">/1017/loginPro.jsp</result>
+		</action>
+
+		<action name="logout" class="test.ibatis.LogoutAction">
+			<interceptor-ref name="servletConfig" />
+			<result name="success" type="redirect-action">main</result>
+		</action>
+
+		<action name="input" class="test.ibatis.InputAction">
+			<result>/1017/inputForm.jsp</result>
+		</action>
+
+		<action name="confirmId" class="test.ibatis.confirmIdAction">
+			<interceptor-ref name="ibatis" />
+			<interceptor-ref name="servletConfig" />
+			<interceptor-ref name="params" />
+			<result>/1017/confirmId.jsp</result>
+		</action>
+
+		<action name="inputPro" class="test.ibatis.InputProAction">
+			<interceptor-ref name="basicStack" />
+			<result name="success" type="redirect-action">main</result>
+		</action>
+
+		<action name="modify" class="test.ibatis.BlankAction">
+			<result>/1017/modify.jsp</result>
+		</action>
+
+		<action name="modifyForm" class="test.ibatis.ModifyFormAction">
+			<interceptor-ref name="basicStack" />
+			<result>/1017/modifyForm.jsp</result>
+		</action>
+		<action name="modifyPro" class="test.ibatis.ModifyProAction">
+			<interceptor-ref name="basicStack" />
+			<result>/1017/modifyPro.jsp</result>
+		</action>
+
+		<action name="deleteForm" class="test.ibatis.BlankAction">
+			<result>/1017/deleteForm.jsp</result>
+		</action>		
+		<action name="deletePro" class="test.ibatis.DeleteProAction">
+			<interceptor-ref name="ibatis" />
+			<interceptor-ref name="servletConfig" />
+			<interceptor-ref name="params" />
+			<result>/1017/deletePro.jsp</result>
+		</action>
+
+
+	</package>
+
+</struts>

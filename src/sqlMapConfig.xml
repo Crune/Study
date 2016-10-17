@@ -41,5 +41,6 @@
 	</transactionManager>
 
 	<sqlMap resource="/sql/testSQL.xml"/>
+	<sqlMap resource="/sql/memberSQL.xml"/>
 
 </sqlMapConfig>
